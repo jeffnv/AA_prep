@@ -1,0 +1,49 @@
+Second Coding Test!
+
+Instructions
+This coding test will test some basic programming skills. It should take you about 1 hour; we don't have a hard-limit on the time, so don't worry if you turn it in a few minutes late. Don't take more than five extra minutes, though.
+
+You may not finish all the questions; this is expected. Shoot for solving the first three problems. Problems are ordered easiest to hardest. Do as much as you can within the time limit. Focus on complete answers; we want to see you solve whole problems, we don't give much partial credit. The fourth problem is hardest; save that for last.
+
+Use either your own Ruby setup, or repl.it.
+
+Please do not search Google for answers to the problems. Please do not post the problems to the internet.
+
+You may answer the challenge in Ruby or Python.
+
+Ordered words
+Both Ruby and Python let you compare letters: "a" < "z" returns true. Write a method, word_ordered?, which returns whether the letters in a word occur in alphabetical order:
+
+word_ordered?("amz") == true
+word_ordered?("zma") == false
+word_ordered?("aa") == true # repeats okay
+String encoding
+Write a method named encode(str) which takes in a string and returns an array of pairs: each pair contains the next distinct letter in the string, and the number consecutive repeats.
+
+encode("aaabbcbbaaa") ==
+  [["a", 3], ["b", 2], ["c", 1], ["b", 2], ["a", 3]]
+encode("aaaaaaaaaa") == [["a", 10]]
+encode("") == []
+Nearby words
+Write a method named nearby_words(str, word_list) which takes in a string and an array of valid words (the word_list). It should return an array of words from the word_list which have the same length as str but which are one letter different:
+
+WORDS = ["door", "moot", "boot", "boots"]
+nearby_words("moor", WORDS) == ["door", "moot"]
+You may assume that the input string and word list contain only lower case letters.
+
+Intersection
+This problem is a little trickier. Don't focus on this one until you have the first three solutions working properly.
+
+Write a method intersection(range1, range2) that takes two ranges (a pair of start and stop coordinates on a line) and returns (a) an array of subranges of range1 which are not contained in range2, (b) an array of subranges of range2 that are not contained in range1, and (c) the subrange common to both range1 and range2.
+
+intersection([0, 3], [2, 4]) == {
+  :range1 => [[0, 2]],
+  :both => [2, 3],
+  :range2 => [[3, 4]]
+}
+
+intersection([0, 5], [1, 4]) == {
+  :range1 => [[0, 1], [4, 5]],
+  :both => [1, 4],
+  :range2 => []
+}
